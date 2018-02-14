@@ -8,7 +8,7 @@ def nameSum():
     print "the point value of the word '%s' is: %d" % (name, sum)
 
 def test():
-    print "for an input of the word 'the' expect the output of 33"
+    print "for an input of the word 'the' expect the output of 3"
     nameSum()
 
 test()

@@ -26,7 +26,7 @@ greet[0]
 
 # ...etc, if you indicate x = 8 and print greet[x-2] you'll get b...and it does count the spaces
 
-# a contiguois sequence of characters or a substring can be taken out also, by slicing. <string>[<start>:<end>], start and end are int valued expressions.start produces substring starting at position given by start and running up to but not including position end.if either expression is missing, the start and end of the string are the assumed defaults. greet[:]just hands back the entire string. greet[5: ] hands back ' bob'
+# a contiguois sequence of characters or a substring can be taken out also, by slicing. <string>[<start>:<end>], start and end are int valued expressions.start produces substring starting at position givn by start and running up to but not including position end.if either expression is missing, the start and end of the string are the assumed defaults. greet[:]just hands back the entire string. greet[5: ] hands back ' bob'
 
 # concatenation builds a string by "gluing" two strings together. len tells how many characters are in a string.
 
