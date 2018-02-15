@@ -19,11 +19,27 @@ print(euler1(3,5,10))
 def pract1 (string1,string2):
 
     for letter2 in string2:
+        isletter2Instring1 = False
+
         for letter1 in string1:
-            if letter1 != letter2:
-                pass
-
-        print(letter2)
-
+            print(letter1,letter2,letter1 == letter2)
+            if letter1 == letter2:
+                isletter2Instring1 = True
+        if isletter2Instring1 == False:
+            print(letter2)
 
 pract1("cat","happy")
+
+def prac2 (string3, string4):
+
+    for letter3 in string3:
+        isletter3Instring2 = False
+
+        for letter3 in string3:
+            print(letter3,letter4)
+            if letter3 == letter4:
+                isletter3Instring2= True
+        if isletter3Instring3 == False:
+            print(letter3)
+
+pract2("the", "boat")
