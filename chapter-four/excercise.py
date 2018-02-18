@@ -7,7 +7,20 @@
 def main():
         fname = raw_input("enter filename: ")
         infile = open(fname,'r')
-        data + infile.read()
-        print data
+        data = infile.read()
+        text(data)
+        charNum(data)
 
+def text(data):
+    wordcount = len(data.split())
+    print("the number of words in the sentance is: " + str(wordcount))
+
+
+def charNum(data):
+    charCount = data.split()
+    sum = 0
+    for characters in charCount:
+        sum += len(characters)
+
+    print sum
 main()
