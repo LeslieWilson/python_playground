@@ -11,16 +11,23 @@ def main():
         text(data)
         charNum(data)
 
+'''
+this function takes the data and splits it into individual words, and prints the amount of words there are
+'''
 def text(data):
     wordcount = len(data.split())
     print("the number of words in the sentance is: " + str(wordcount))
 
-
+'''
+this takes the data and splits the individual characters apart and counts them
+'''
 def charNum(data):
     charCount = data.split()
     sum = 0
     for characters in charCount:
         sum += len(characters)
 
-    print sum
+    print "the number of chars in the file: " + str(sum)
+
+
 main()
