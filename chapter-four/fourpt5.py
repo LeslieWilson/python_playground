@@ -9,10 +9,10 @@
 
 # input the date in mm/dd/yyy format(datStr)
 
-dateStr = raw_input("enter a date(mm/dd/yyy): ")
+dateStr = raw_input("enter a date(mm/dd/yyyy): ")
 
 # split datStr into month, dat and year strings
-monthStr, dayStr, yearStr = dateStr.split(dateStr, "/")
+monthStr, dayStr, yearStr = (dateStr.split("/"))
 
 # convert the montStr into a month name
 
@@ -20,6 +20,7 @@ months = ["janurary", "february", "march", "april", "may", "june", "july", "augu
 
 monthStr = months[int(monthStr)-1]
 # output results in month, day year format
-print "the converted date is:", monthStr, dayStr,+",", yearStr
+print "the converted date is: " + monthStr + " " + dayStr + ", "+yearStr
 
-main()
+print "the converted date is: %s %s, %s" % (monthStr, dayStr, yearStr)
+a
