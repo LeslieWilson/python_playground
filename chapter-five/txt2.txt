@@ -1,0 +1,11 @@
+10
+leslie 87
+bob 23
+shirly 34
+maggie 25
+fred 87
+cassandra 90
+chris 34
+peter 92
+maria 30
+joe 57
