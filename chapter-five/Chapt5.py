@@ -1,3 +1,18 @@
+# what is a class?
+
+# a class is an instance of an object. For example leslie is the class of human, and it describes the props I'll have. An example of a class is how I called the point below, "center". Thats the classname for the instance of the object.
+
+# a method is a function that lives inside the object, invoked using dot-notation. its a message we send to the object. so like, below where i say oval.draw, I'm invoking the method draw on the oval to make it appear.
+
+#an argument consists of one or several parameters that denote the subroutine of the program. so it is the data you pass into a method I suppose. like, below where it says "for year in range (1,11)" those numbers would be the arguments. I hope I'm correct about that.
+
+
+# below is just some random scribbling as I read the chapter...
+
+
+
+
+
 #open a graphics window
 win = GraphWin('Shapes')
 #draw a red circle centered at point (100, 100) with radius 30
