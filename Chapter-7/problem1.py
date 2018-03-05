@@ -3,8 +3,16 @@
 
 # program calculates total wages for the week based on input of hours worked and hourly rate
 
-def main(hours, rate):
+def main():
+
     hours = input("how many hours a week did you work?: ")
     rate = input("how much were you paid per hour?: ")
     wage = hours * rate
-print wage
+
+    if hours > 40:
+        overtime = wage + wage/2
+    else:
+        overtime = wage
+
+    return overtime
+print main()
