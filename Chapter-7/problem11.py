@@ -2,16 +2,12 @@
 
 def main():
     year = input("put a year in and I'll tell you if its a leap year!: ")
-    century = 0
-
-    if str(year)[2] == 0 and str(year)[3] == 0:
-        century = year
-
-    if year % 4 == 0 and century % 400 == 0:
-            print "You've got yourself a leap year"
+    if year % 4 == 0
+        if str(year)[-1] == "0" and str(year)[-2] == "0" and century % 400 != 0:
+            print "its not a leap year"
+        else:
+            print "its a leap year"
     else:
-        print "its not a leap year"
-
-
+        print "not a leap giuear"
 
 main()
