@@ -13,7 +13,7 @@ def main():
     line = infile.readline()
     while line != "":
 
-        for x in string.split(line):
+        for x in line.split(","):
             if x >= 80:
                 countHeating = countHeating + 1
             elif x <= 60:
