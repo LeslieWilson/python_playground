@@ -15,11 +15,12 @@
 #
 #
 
-def sumNums(list):
+def sumNums(array):
     accumulater=0
-    for i in list:
-        accumulater+=i
+    for num in array:
+        accumulater+=num
     return accumulater
+
 
 # the test case:
 print sumNums([27,9,8])
