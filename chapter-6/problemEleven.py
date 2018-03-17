@@ -5,10 +5,11 @@
 #     return x*x
 
 
-    def squareNums(list):
-        for i in list:
-            i * i
-        return list
+def squareNums(array):
+    for num in array:
+        num *= num
+        print num
+    return array
 
     # the test case:
-    print squareNums([3,9,8])
+print squareNums([3,9,8])
