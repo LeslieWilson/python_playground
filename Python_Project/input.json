@@ -1,0 +1,24 @@
+{
+    "Employee":[
+    {
+        "name": "Kamal",
+        "dept": "QA Center of Excellence",
+        "id" : "1",
+        "manager": "Mr.X",
+        "city": "New Delhi"
+
+    },
+
+    {
+        "name": "Akshay",
+        "dept" : "qA center of excellence",
+        "id" : "2",
+        "manager": "ben",
+        "city" : "Bangalore"
+    }
+    ]
+
+
+}
+
+ 
