@@ -2,9 +2,6 @@
 
 #
 
-
-
-
 def main(start_time,end_time):
 # function takes start and end time passed in
     if start_time[0] < 21:

@@ -6,7 +6,6 @@
 
 #an argument consists of one or several parameters that denote the subroutine of the program. so it is the data you pass into a method I suppose. like, below where it says "for year in range (1,11)" those numbers would be the arguments. I hope I'm correct about that.
 
-
 # below is just some random scribbling as I read the chapter...
 
 
