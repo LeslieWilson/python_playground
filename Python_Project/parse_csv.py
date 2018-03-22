@@ -1,7 +1,7 @@
-import csv
+import json
 # use context manager, to read the file say
-with open('Data.csv', 'r') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
+with open('input.json', 'r') as json_file:
+    csv_reader = csv.DictReader(json_file)
 # passing the csv file through the reader method
 
 
