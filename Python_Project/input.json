@@ -1,3 +1,19 @@
+    [
+    {
+        "name": "Dalia",
+        "dept": "labor dept",
+        "ethnicity": "african american",
+        "gender": "female",
+
+        "degrees":[
+            {
+            "level":"college",
+            "subject":"english",
+            "grad year": "2001",
+            "location": "harvard university"
+        }]
+    },
+
 
     {
         "name": "Dalia",
@@ -5,94 +21,28 @@
         "ethnicity": "african american",
         "gender": "female",
 
-        "degrees":{
+        "degrees":[
+            {
             "level":"college",
             "subject":"english",
             "grad year": "2001",
             "location": "harvard university"
-        }
+        }]
     },
 
     {
-        "name": "Sam",
-        "dept": "dept corrections",
-        "ethnicity": "native american",
-        "gender": "female",
-
-        "degrees":{
-            "level":"highschool",
-            "subject":"english",
-            "grad year": "2020",
-            "location": "milton"
-        }
-    },
-
-    {
-        "name": "Tom",
-        "dept": "Workforce Dept",
-        "ethnicity": "peruvian",
-        "gender": "male",
-
-        "degrees":{
-            "level":"highschool",
-            "subject":"english",
-            "grad year": "2009",
-            "location": "edgartown university"
-        }
-    },
-
-    {
-        "name": "William",
-        "dept": "Workforce Dept",
-        "ethnicity": "hispanic",
-        "gender": "male",
-
-        "degrees":{
-            "level":"graduate",
-            "subject":"english",
-            "grad year": "2011",
-            "location": "edgartown university"
-        }
-    },
-
-    {
-        "name": "henry",
-        "dept": "Waterworks",
-        "ethnicity": "hispanic",
-        "gender": "male",
-
-        "degrees":{
-            "level":"middleschool",
-            "subject":"english",
-            "grad year": "2017",
-            "location": "williamsburg"
-        }
-    },
-
-    {
-        "name": "sarah",
-        "dept": "Workforce Dept",
+        "name": "Dalia",
+        "dept": "labor dept",
         "ethnicity": "african american",
         "gender": "female",
 
-        "degrees":{
+        "degrees":[
+            {
             "level":"college",
             "subject":"english",
-            "grad year": "2016",
-            "location": "new york university"
-        }
-    },
+            "grad year": "2001",
+            "location": "harvard university"
+        }]
+    }
 
-    {
-        "name": "john",
-        "dept": "Workforce Dept",
-        "ethnicity": "hispanic",
-        "gender": "female",
-
-        "degrees":{
-            "level":"college",
-            "subject":"english",
-            "grad year": "2009",
-            "location": "edgartown university"
-        }
-    },
+]
