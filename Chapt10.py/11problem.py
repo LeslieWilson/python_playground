@@ -46,16 +46,12 @@ class Card(object):
     def __str__(self):
         return "%s of %s" % (self.getrank() , self.getSuit())
 
+card = Card(randrange(1,13), choice(["s","d","c","h"]))
 
+input = raw_input("put your number in: ")
+for i in range(int(input)):
+    print Card(randrange(1,13), choice(["s","d","c","h"]))
 
-
-
-card = Card(randrange(1,13) , choice(["s","d","c","h"]))
-
-
-
-
-print card
 card.BJValue()
 card.getrank()
 card.getSuit()
