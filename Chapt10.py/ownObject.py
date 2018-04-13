@@ -1,56 +1,72 @@
 # NOTES:
 
 """
-This is a program that takes the card written in the previous program, and puts it into a card-shooter-gun. You aim the card-shooter-gun at a cop, and it shoots a random playing card in his face at a certain velocity. I want to figure out how far the playing card will travel when fired at gun angles and initial velocities. The input to the program will be the launch angle in degrees. the inititial velocity (in meters per second) and the initial height(in meters) of the gun itself. woill need to upate the position of the card to account for its flight.
-
-fires a random card, the name of the card displays, if you input it at 200 mph the cop will be injured, at less it won't hurt
-
-
-gun is the class... initilaize a gun, the gun is going to take a card and a speed, and its going to have a method called fire which will eject the card and maybe injure the cop. will print if cop gets hurt.
-
-1.have method called reload, which puts new card into gun.
-
-2. method checks currently loaded
-
-3. method that fires a blank and returns a string
-
-4. method that fires it at a random speed.
+Leslie Wilson
+April 12 2018
+ownObject.py
 
 """
 
 from random import *
-from elevenProblem import *
+from elevenProblem import randomCard
 
 class Gun(object):
+
+    ''' creates gun object with ammunition that is random cards'''
+
     def __init__(self):
         self.ammunition = randomCard()
         self.loaded = self.ammunition[0]
 
-# what ammo do i have?
+
     def getAmmo(self):
+
+        '''prints the random card array that is your ammunition'''
+
         print "you're loaded with:",
         for i in self.ammunition:
             print i,
-        print "\n"
+
 
 # what speed is it being shot at
 
     def getSpeed(self):
-        vel = input("enter the initial velocity(in MPH): ")
-        if vel <= 5:
-            print " womp womp "
-        elif vel > 5:
-            print "OW"
+
+        '''prompts user for desired speed of ammunition before it fires. determines if person lives or dies- under 40mph will not kill them'''
+
+        vel = input("set your ammos velocity(in MPH): ")
+        if vel <= 40:
+            print " this is not gonna do much "
+        elif vel > 40:
+            print "GOOD this will kill him for sure....."
+            return vel
+
+    def fire(self):
+
+        '''shoots the first card out of the array at the given speed, if fast enough, kills person. prints the card that killed them'''
+
+        shot = raw_input("pull trigger? y/n: ")
+        if shot == "y" and self.getSpeed() > 40:
+            print "...yep, you killed him with %s" % (self.loaded)
+            self.ammunition.pop(0)
+            # print "cop got hit by %s" % (shot)
+        elif shot == "n":
+            print "you chose not to fire"
+        else:
+            print "oops you missed the trigger"
 
 
     def reLoad(self):
 
-        return self.reload
+        '''prompts user to reload desired number of cards into shooter. new cards append onto cards still remaining in shooter. prints new list'''
 
-    def fire(self):
-        shot = self.loaded
-        self.loaded = nil
-        print "cop got hit by %s" % (shot)
+        load = raw_input("you shot the first card in the queue. reload? y/n: ")
+        if load == "y":
+            self.ammunition += randomCard()
+            print "now you're loaded with: ",
+            for i in self.ammunition:
+                print i,
+
 
 
 # this makes makes ammo and puts it in
@@ -58,8 +74,8 @@ class Gun(object):
 def main():
     gun = Gun()
     gun.getAmmo()
-    gun.getSpeed()
-
+    gun.fire()
+    gun.reLoad()
 main()
 
 
