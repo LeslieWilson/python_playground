@@ -44,13 +44,33 @@ class Card(object):
             return "your bj val is %d" % (self.rank)
 
     def __str__(self):
-        return "%s of %s" % (self.getrank() , self.getSuit())
+
+        return "%s of %s |" % (self.getrank() , self.getSuit())
 
 card = Card(randrange(1,13), choice(["s","d","c","h"]))
 
-input = raw_input("put your number in: ")
-for i in range(int(input)):
-    print Card(randrange(1,13), choice(["s","d","c","h"]))
+def randomCard():
+    array = []
+
+    input = raw_input("put your number in: ")
+    for i in range(int(input)):
+        card = Card(randrange(1,13),
+        choice(["s","d","c","h"]))
+        array.append(card)
+    return array
+
+# x = randomCard()
+#
+# for card in x:
+#     print(card)
+    # print(card.BJValue())
+
+
+
+
+
+
+
 
 card.BJValue()
 card.getrank()
