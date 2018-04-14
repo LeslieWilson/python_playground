@@ -1,3 +1,5 @@
+# this is just some practice... a problem i thought I should try to do, and the problem I picked later to do for homework is like this one. 
+
 import fname
 
 def main ():
