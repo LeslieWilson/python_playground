@@ -1,0 +1,48 @@
+[
+{
+    "name": "Dalia",
+    "dept": "labor dept",
+    "ethnicity": "african american",
+    "gender": "female",
+
+    "degrees":[
+        {
+        "level":"college",
+        "subject":"spanish",
+        "grad year": "2001",
+        "location": "harvard university"
+    }]
+},
+
+
+{
+    "name": "Dalia",
+    "dept": "labor dept",
+    "ethnicity": "african american",
+    "gender": "male",
+
+    "degrees":[
+        {
+        "level":"college",
+        "subject":"english",
+        "grad year": "1990",
+        "location": "harvard university"
+    }]
+},
+
+{
+    "name": "Dalia",
+    "dept": "toxicology",
+    "ethnicity": "spanish",
+    "gender": "female",
+
+    "degrees":[
+        {
+        "level":"college",
+        "subject":"english",
+        "grad year": "2001",
+        "location": "harvard university"
+    }]
+}
+
+]
