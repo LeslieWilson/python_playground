@@ -1,0 +1,9 @@
+8 
+Labor-Department 2
+Hispanic-Ethnicity 2
+Gender(female) 2
+Education-Level(College) 3
+University(Harvard) 3
+Major(English) 2
+1990-Grad-Yr 1
+2001-Grad-Yr 2
