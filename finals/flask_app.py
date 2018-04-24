@@ -1,29 +1,39 @@
 
-# assigning functions to particular addresses on my webpage.
 # brings you back to origional homepage, url lets you figure out where in the website a post is
 from flask import Flask, render_template, request, redirect, url_for
 from models import *
 
 app = Flask(__name__)
 
+@app.before_request
+def before_request():
+    # create db if needed and connect
+    initialize_db()
 
+@app.teardown_request
+def teardown_request(exception):
+    # close the db connection
+    db.close()
 
-# When I wanna create a new route use @app.route decorator. / route is homepage
 @app.route('/')
-def hello_world():
-    return 'Hello, Flask'
+def home():
+    # render the home page with the saved information
+     return render_template('home.html', posts=Post.select().order_by(Post.date.desc()))
 
-# @app.route('/hello')
-# def hello():
-#     return 'Hello World'
+@app.route('/new_post/')
+def new_post():
+    return render_template('new_post.html')
 
 
-
-@app.route('/hello/<name>')
-def hello(name):
-    return 'hello, %s' % name
-
-# debug = true, when you are in your application, if you change a file it will automatically reload your server. Also if you crash it will give you a backtrace of what goes wrong in the browser. Good for testing but need to take it out when it goes live or people can execute arbitrary code when they visit.
+@app.route('/create/', methods=['POST'])
+def create_post():
+# create new post
+    Post.create(
+        title=request.form['title'],
+        text = request.form['text']
+    )
+    # return the user to the home page
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)

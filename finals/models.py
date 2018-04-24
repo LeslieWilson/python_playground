@@ -1,13 +1,21 @@
 from peewee import *
+import datetime
 
 db = SqliteDatabase ('signup.db')
 
-class Person(Model):
+# class Person(Model):
+#     id = PrimaryKeyField()
+#     name = CharField()
+#     email = CharField()
+#     age = IntegerField()
+#     statement = CharField()
+
+class Post(Model):
     id = PrimaryKeyField()
-    name = CharField()
-    email = CharField()
-    age = IntegerField()
-    statement = CharField()
+    title = CharField()
+    text = CharField()
+    date = DateTimeField(default = datetime.datetime.now)
+
 
 
     class Meta:
@@ -16,7 +24,7 @@ class Person(Model):
 
 def initialize_db():
     db.connect()
-    db.create_tables([Person], safe=True)
+    db.create_tables([Post], safe=True)
 
 initialize_db()
 
@@ -35,4 +43,4 @@ initialize_db()
     # and you can delete people in the for each loop like this instead of sendng them an email.
 
 
- db.close()
+db.close()
