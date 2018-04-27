@@ -35,5 +35,16 @@ def create_post():
     # return the user to the home page
     return redirect(url_for('home'))
 
+
+@app.route('/result', methods = ['GET', 'POST'])
+def result():
+    if request.method == 'GET':
+        data = request.args.get('place', None)
+        Post.create(
+            title= request.args.get('place', None),
+            text= request.args.get('place', None)
+        )
+    return "some text {}".format(data)
+
 if __name__ == '__main__':
     app.run(debug=True)

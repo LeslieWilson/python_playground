@@ -1,7 +1,11 @@
 from peewee import *
+from flask_peewee.rest import RestAPI
+from flask_app import app
 import datetime
 
+
 db = SqliteDatabase ('signup.db')
+
 
 # class Person(Model):
 #     id = PrimaryKeyField()
@@ -21,12 +25,19 @@ class Post(Model):
     class Meta:
         database = db
 
-
 def initialize_db():
     db.connect()
     db.create_tables([Post], safe=True)
 
 initialize_db()
+# register our models so they are exposed via /api/<model>/
+api = RestAPI(app)
+api.register(Post)
+
+# configure the urls
+api.setup()
+
+
 
 # here are some calls to the data I can use later
 
