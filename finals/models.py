@@ -1,6 +1,6 @@
 from peewee import *
 from flask_peewee.rest import RestAPI
-from flask_app import app
+from flask_app import *
 import datetime
 
 
@@ -19,8 +19,6 @@ class Post(Model):
     title = CharField()
     text = CharField()
     date = DateTimeField(default = datetime.datetime.now)
-
-
 
     class Meta:
         database = db
