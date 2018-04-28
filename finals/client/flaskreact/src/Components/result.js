@@ -50,7 +50,7 @@ class Form1 extends React.Component {
 }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    alert('A name was submitted: ' + this.state.name);
     event.preventDefault();
   }
 
@@ -60,31 +60,31 @@ class Form1 extends React.Component {
 
         <label>
           Name:
-          <input type="text" value={this.state.name} onChange={this.handleChange} />
+          <input type="text" name= "name" value={this.state.name} onChange={this.handleChange} />
         </label>
         <label>
           Email:
-          <input type="text" value={this.state.email} onChange={this.handleChange} />
+          <input type="text" name= "email" value={this.state.email} onChange={this.handleChange} />
         </label>
         <label>
           Country:
-          <input type="text" value={this.state.country} onChange={this.handleChange} />
+          <input type="text" name= "country" value={this.state.country} onChange={this.handleChange} />
         </label>
         <label>
           State:
-          <input type="text" value={this.state.state} onChange={this.handleChange} />
+          <input type="text" name = "state" value={this.state.state} onChange={this.handleChange} />
         </label>
         <label>
           City:
-          <input type="text" value={this.state.city} onChange={this.handleChange} />
+          <input type="text" name = "city" value={this.state.city} onChange={this.handleChange} />
         </label>
         <label>
           Street:
-          <input type="number" value={this.state.street} onChange={this.handleChange} />
+          <input type="number" name = "street" value={this.state.street} onChange={this.handleChange} />
         </label>
         <label>
           Zip:
-          <input type="number" value={this.state.zip} onChange={this.handleChange} />
+          <input type="number" name= "zip" value={this.state.zip} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
 
