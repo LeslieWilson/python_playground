@@ -37,16 +37,23 @@ def teardown_request(exception):
     # return the user to the home page
     # return redirect(url_for('home'))
 
+#this route takes a get request from my home.js and sends up a json representation of everything in the database
 @app.route('/api/Home', methods = ['GET'])
 @cross_origin()
 def result():
-    posts=Post.select().order_by(Post.date.desc())
+    entries=Entry.select().order_by(Entry.date.desc())
     array = []
-    for post in posts:
-        array.append({"text": post.text, "title": post.title})
+    for entry in entries:
+        array.append({"name": entry.name, "email": entry.email, "country": entry.country, "state": entry.state, "city": entry.city, "zip": entry.zip})
     return jsonify(array)
 
     # print (posts)
+
+@app.route('/api/Form1', methods = ['POST'])
+@cross_origin():
+# takes information it receives and enters it into database
+def databaseEntry():
+
 
 
 

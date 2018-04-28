@@ -1,5 +1,6 @@
+//getting information from the database
 import React, { Component } from 'react';
-import Form1 from '../Components/result.js';
+import Form1 from '../Components/Form1.js';
 
 class Home extends Component{
     constructor(props){
@@ -35,6 +36,8 @@ componentDidMount() {
       return(
           <div>
             <h1>hi</h1>
+            <Form1/>
+
 
             </div>
 

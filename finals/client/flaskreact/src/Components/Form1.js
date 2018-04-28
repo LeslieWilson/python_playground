@@ -1,20 +1,5 @@
-// import ReactDOM from 'react-dom';
-// import React, {Component} from 'react';
-// class Form1 extends Component{
-//     render(){
-//         return (
-//             <div class="form">
-//                 <form action="http://localhost:5000/result" method="get">
-//                     databaseEntry: <input type="text" name="place"/>
-//                     <input type="submit" value="Submit"/>
-//                 </form>
-//             </div>
-//         );
-//     }
-// }
-//
-//
-// export default Form1
+
+
 
 
 import reactDOM from 'react-dom';
@@ -48,10 +33,31 @@ class Form1 extends React.Component {
     });
 
 }
+//send information to the databse
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.name);
     event.preventDefault();
+    fetch('http://localhost:5000/api/Home', {
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: { 'Content-Type':'application/json'}
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {console.log(body)
+        this.setState({results: body})
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   }
 
   render() {

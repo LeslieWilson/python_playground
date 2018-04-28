@@ -4,7 +4,7 @@ from flask_app import *
 import datetime
 
 
-db = SqliteDatabase ('signup.db')
+db = SqliteDatabase ('almond.db')
 
 
 # class Person(Model):
@@ -14,23 +14,27 @@ db = SqliteDatabase ('signup.db')
 #     age = IntegerField()
 #     statement = CharField()
 
-class Post(Model):
+class Entry(Model):
     id = PrimaryKeyField()
-    title = CharField()
-    text = CharField()
+    name = CharField()
+    email = CharField()
     date = DateTimeField(default = datetime.datetime.now)
+    country = CharField()
+    state= CharField()
+    city = CharField()
+    zip = IntegerField()
 
     class Meta:
         database = db
 
 def initialize_db():
     db.connect()
-    db.create_tables([Post], safe=True)
+    db.create_tables([Entry], safe=True)
 
 initialize_db()
 # register our models so they are exposed via /api/<model>/
 api = RestAPI(app)
-api.register(Post)
+api.register(Entry)
 
 # configure the urls
 api.setup()
