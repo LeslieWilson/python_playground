@@ -1,10 +1,13 @@
 
 # brings you back to origional homepage, url lets you figure out where in the website a post is
 from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask_cors import CORS, cross_origin
 from models import *
 
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.before_request
 def before_request():
@@ -35,10 +38,16 @@ def teardown_request(exception):
     # return redirect(url_for('home'))
 
 @app.route('/api/Home', methods = ['GET'])
+@cross_origin()
 def result():
     posts=Post.select().order_by(Post.date.desc())
-    print (posts)
-    return jsonify(posts)
+    array = []
+    for post in posts:
+        array.append({"text": post.text, "title": post.title})
+    return jsonify(array)
+
+    # print (posts)
+
 
 
 # @app.route('/result', methods = ['GET', 'POST'])
