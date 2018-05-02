@@ -10,16 +10,22 @@ from random import *
 
 class Ring:
     def __init__(self, genre):
-        self.count = 0
+        # self.count = 0
         self.genre = genre
 
     def testMe(self):
         userInput = input("you want to see an old card or make a new one? (select 'o' or 'n')")
         if userInput == "o":
-            with open(self.genre + str(round(self.count * random())) + ".txt", "r") as file:
+            with open(self.genre + ".txt", "r") as file:
                 linestore = []
                 for line in file:
                     linestore.append(line)
+
+                print (" Q: " + linestore[0])
+
+                # usrInput = input("you should put in a")
+                # if usrInput == 'a':
+                print (linestore[1])
                     # linestore 0 is the question and linestore 1 is answer
 
 
@@ -31,20 +37,26 @@ class Ring:
     def makeCard(self):
         userInputQ = input("give me your question")
         userInputA = input("give me you answer")
-        with open(self.genre + str(self.count) + ".txt", "w") as file:
-            file.write(userInputQ + "\n" + userInputA )
-
-runRing = Ring("math")
-runRing.makeCard()
+        with open(self.genre + '.txt', 'a') as file:
+            file.write("\n" + userInputQ + "," + userInputA )
+            # self.count =+ 1
 
 
 
-
-
+runRing = Ring("CompSciFlashcards")
+runRing.testMe()
 
 
 
 
+
+
+# + str(round(self.count * random())
+
+
+
+#
+# + str(self.count)
 
 
 
