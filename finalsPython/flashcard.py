@@ -18,10 +18,18 @@ class Ring:
         if userInput == "o":
             with open(self.genre + ".txt", "r") as file:
                 linestore = []
+                quiz = []
                 for line in file:
                     linestore.append(line)
+                for line in linestore:
+                    quiz = line.split(',')
+                    print (" Here is your question! :" + quiz[0] + "\n" + "Hit F to flip to the answer!")
+                    userInput2 =  input('')
+                    if userInput2 == "f":
+                        print (" Here is your answer! :" + quiz[1] + "\n" + "Hit N to move on to next card!")
 
-                print (" Q: " + linestore[0])
+
+
 
                 # usrInput = input("you should put in a")
                 # if usrInput == 'a':
@@ -43,7 +51,7 @@ class Ring:
 
 
 
-runRing = Ring("CompSciFlashcards")
+runRing = Ring("Comp-Sci Flashcards")
 runRing.testMe()
 
 
