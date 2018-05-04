@@ -14,7 +14,7 @@ class Ring:
         self.genre = genre
 
     def testMe(self):
-        userInput = input("you want to see an old card or make a new one? (select 'o' or 'n')")
+        userInput = input("See an old card or make a new one? (select 'o' or 'n'): " + "\n")
         if userInput == "o":
             with open(self.genre + ".txt", "r") as file:
                 linestore = []
@@ -23,17 +23,25 @@ class Ring:
                     linestore.append(line)
                 for line in linestore:
                     quiz = line.split(',')
-                    print (" Here is your question! :" + quiz[0] + "\n" + "Hit F to flip to the answer!")
+                    print(line)
+                    if not quiz:
+                        print ("end of questions")
+                        break
+                    print ("..........." + "\n"+ "??QUESTION??: " + quiz[0] + "\n" + "..........." + "\n" + "           ~~hit 'a' to see the answer~~" )
                     userInput2 =  input('')
-                    if userInput2 == "f":
-                        print (" Here is your answer! :" + quiz[1] + "\n" + "Hit N to move on to next card!")
+                    if userInput2 == "a":
+                        print ("..........." + "\n"+ "!!ANSWER!!: " + quiz[1] + "..........." + "\n"+ "\n"+ "           ~~NEXT QUESTION~~")
+                    # if userInput3 == "n":
+                    #     print
+
+
 
 
 
 
                 # usrInput = input("you should put in a")
                 # if usrInput == 'a':
-                print (linestore[1])
+                # print (linestore[1])
                     # linestore 0 is the question and linestore 1 is answer
 
 
@@ -43,10 +51,11 @@ class Ring:
             self.makeCard()
 
     def makeCard(self):
-        userInputQ = input("give me your question")
-        userInputA = input("give me you answer")
+        userInputQ = input("Enter Question: ")
+        userInputA = input("Enter Answer: ")
         with open(self.genre + '.txt', 'a') as file:
             file.write("\n" + userInputQ + "," + userInputA )
+
             # self.count =+ 1
 
 
