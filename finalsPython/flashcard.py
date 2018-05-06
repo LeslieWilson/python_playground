@@ -5,52 +5,88 @@ flashcard.py
 May 5, 2018
 """
 
-from random import *
+import random
 
 
 class Ring:
     '''
-    Ring is an object that holds all the flashcards.
+    Ring is an object that holds all the flashcards of a given genre.
     '''
-# initiaite the genre of flashcards in self
+
     def __init__(self, genre):
         self.genre = genre
-# if the user decides they want to see old cards, this method opens the text file and spits out the lines that are stored there (as questions and answers)
-    def testMe(self):
+
+    def readCards(self):
+        '''
+        Takes an input from user to view old or new cards and either prompts for the answer
+        until each card is read or prompts for the entry of new questions to add to the ring
+        '''
         userInput = input("See an old card or make a new one? (select 'o' or 'n'): " + "\n")
+        while userInput not in "o n":
+            userInput = input("See an old card or make a new one? (select 'o' or 'n'): " + "\n")
         if userInput == "o":
             with open(self.genre + ".txt", "r") as file:
                 linestore = []
                 quiz = []
                 for line in file:
+                    line = line.strip()  # remove the new line characters from the end
                     linestore.append(line)
+                random.shuffle(linestore)   # shuffle the array so the questions are in a random order
                     # appends each line into the array linestore
                 for line in linestore:
                     quiz = line.split(',')
                     # splits each line at the comma, so can give seperate question/answer quiz
-                    print(line)
                     if not quiz:
                         print ("end of questions")
                         break
-                    print ("..........." + "\n"+ "??QUESTION??: " + quiz[0] + "\n" + "..........." + "\n" + "           ~~hit 'a' to see the answer~~" )
+                    print ("..........." + "\n"+ "??QUESTION??: " + quiz[0] + "\n" + "..........." + "\n" + "           ~~hit 'a' to see the answer, or guess it!~~" )
                     # takes the first of two comma separated peices and shows it to user
-                    userInput2 =  input('')
-                    if userInput2 == "a":
-                        print ("..........." + "\n"+ "!!ANSWER!!: " + quiz[1] + "..........." + "\n"+ "\n"+ "           ~~NEXT QUESTION~~")
+                    self.checkAnswer(quiz[1])
 
 
 
         elif userInput == "n":
             self.makeCard()
 
-    def makeCard(self):
-        userInputQ = input("Enter Question: ")
-        userInputA = input("Enter Answer: ")
-        with open(self.genre + '.txt', 'a') as file:
-            file.write("\n" + userInputQ + "," + userInputA )
+    def checkAnswer(self, answer):
+        '''
+        Function that takes a user input as a guess and compares it to the answer
+        of a given flashcard.
+        '''
+        guess = ""
+        while guess != "a":
+            guess = input("guess the answer: ")
+            if guess == answer:
+                print("Correct!")
+                break
+            if guess != "a":
+                print("incorrect, type a to see the answer, or guess again!")
+        print ("..........." + "\n"+ "!!ANSWER!!: " + answer + "..........." + "\n"+ "\n"+ "           ~~NEXT QUESTION~~")
 
-runRing = Ring("Comp-Sci Flashcards")
-runRing.testMe()
+    def makeCard(self):
+        '''
+        prompts the user for a question and answer, saves them to a file with
+        comma seperated with the genre as a filename
+        '''
+        moreCards = "y"
+        while moreCards == "y":
+            userInputQ = input("Enter Question: ")
+            userInputA = input("Enter Answer: ")
+            with open(self.genre + '.txt', 'a') as file:
+                file.write(userInputQ + "," + userInputA + "\n" )
+            moreCards = input("Would you like to make another card? (y or n)")
+
+def ChooseGenre():
+    '''
+    function to prompt the user for a genre of flash cards to either add to or read from
+    '''
+    print("pick a genre of flash card")
+    genre = input()
+    ring = Ring(genre)
+    ring.readCards()
+
+ChooseGenre()
+
 
 
 # ~~~~~objects I made to practice for making flashcard, using Zelle as a resource~~~~

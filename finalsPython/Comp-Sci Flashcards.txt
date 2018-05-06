@@ -3,3 +3,5 @@ hi, bye
 hello,dolly
 whats the capitol of ioa,new jersey
 i wanna add a card,here you go
+whats the capitol of spai,madrid !
+whats my middle name? ,Ann!
