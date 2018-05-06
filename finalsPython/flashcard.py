@@ -1,72 +1,59 @@
-# This will be the flashcard constructor that makes all other flashcards!..
 
 """
- objects.py
+Leslie Wilson
+flashcard.py
+May 5, 2018
 """
 
-# make a ring class, they could make the file without having to title it. make a card be a function within the ring class. ring keeps track of how many cards there are. the ring could name the card. otherwise every time you makea new card would need to put a name in for it.
 from random import *
 
 
 class Ring:
+    '''
+    Ring is an object that holds all the flashcards.
+    '''
+# initiaite the genre of flashcards in self
     def __init__(self, genre):
-        # self.count = 0
         self.genre = genre
-
+# if the user decides they want to see old cards, this method opens the text file and spits out the lines that are stored there (as questions and answers)
     def testMe(self):
-        userInput = input("you want to see an old card or make a new one? (select 'o' or 'n')")
+        userInput = input("See an old card or make a new one? (select 'o' or 'n'): " + "\n")
         if userInput == "o":
             with open(self.genre + ".txt", "r") as file:
                 linestore = []
+                quiz = []
                 for line in file:
                     linestore.append(line)
+                    # appends each line into the array linestore
+                for line in linestore:
+                    quiz = line.split(',')
+                    # splits each line at the comma, so can give seperate question/answer quiz
+                    print(line)
+                    if not quiz:
+                        print ("end of questions")
+                        break
+                    print ("..........." + "\n"+ "??QUESTION??: " + quiz[0] + "\n" + "..........." + "\n" + "           ~~hit 'a' to see the answer~~" )
+                    # takes the first of two comma separated peices and shows it to user
+                    userInput2 =  input('')
+                    if userInput2 == "a":
+                        print ("..........." + "\n"+ "!!ANSWER!!: " + quiz[1] + "..........." + "\n"+ "\n"+ "           ~~NEXT QUESTION~~")
 
-                print (" Q: " + linestore[0])
 
-                # usrInput = input("you should put in a")
-                # if usrInput == 'a':
-                print (linestore[1])
-                    # linestore 0 is the question and linestore 1 is answer
-
-
-                # go through file and find where break point is
 
         elif userInput == "n":
             self.makeCard()
 
     def makeCard(self):
-        userInputQ = input("give me your question")
-        userInputA = input("give me you answer")
+        userInputQ = input("Enter Question: ")
+        userInputA = input("Enter Answer: ")
         with open(self.genre + '.txt', 'a') as file:
             file.write("\n" + userInputQ + "," + userInputA )
-            # self.count =+ 1
 
-
-
-runRing = Ring("CompSciFlashcards")
+runRing = Ring("Comp-Sci Flashcards")
 runRing.testMe()
 
 
-
-
-
-
-# + str(round(self.count * random())
-
-
-
-#
-# + str(self.count)
-
-
-
-
-
-
-
-
-
-
+# ~~~~~objects I made to practice for making flashcard, using Zelle as a resource~~~~
 
 # class Card:
 #     def __init__(self, rank, suit):
