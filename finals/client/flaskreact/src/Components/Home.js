@@ -1,7 +1,9 @@
 //getting information from the database
 import React, { Component } from 'react';
 import Form1 from '../Components/Form1.js';
+import Result from '../Components/Result.js';
 
+// class Home takes the
 class Home extends Component{
     constructor(props){
         super(props)
@@ -33,12 +35,32 @@ componentDidMount() {
   }
 
   render(){
+      let results = this.state.results.map((result, index) => {
+          return(
+              <Result key={index}
+              city = {result.city}
+              state = {result.state}
+              country = {result.country}
+              email = {result.email}
+              name = {result.name}
+              zip = {result.zip}
+              />
+
+          )
+      })
+
+    //   const todoItems = todos.map((todo, index) =>
+    //     // Only do this if items have no stable IDs
+    //     <li key={index}>
+    //       {todo.text}
+    //     </li>
+    //   );
+
       return(
           <div>
             <h1>hi</h1>
             <Form1/>
-
-
+            {results}
             </div>
 
 
