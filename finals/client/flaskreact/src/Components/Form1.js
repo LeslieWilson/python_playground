@@ -1,9 +1,4 @@
-
-
-
-
-import reactDOM from 'react-dom';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Form1 extends React.Component {
   constructor(props) {
@@ -58,9 +53,9 @@ class Form1 extends React.Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  }
 
-  render() {
+
+  render(){
     return (
       <form onSubmit={this.handleSubmit}>
 
